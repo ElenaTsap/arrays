@@ -117,7 +117,7 @@ let classArr = [
                 sunday: undefined
         }
     },
-]
+];
 
 console.log(classArr);
 
