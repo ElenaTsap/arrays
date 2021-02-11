@@ -7,6 +7,8 @@ console.log(myLastObj['age']); // returns number 35
 
 console.log(Object.keys(myLastObj)[0]); // returns the name of the key that is the first in the object
 
+console.log(Object.keys(myLastObj));
+
 let myGroupObj = {
     camera1: 'Ana',
     camera2: 'Eleni',
@@ -20,9 +22,9 @@ console.log(myGroupObj);
 
 /* 
 Arrays are based on Objects but there are some differences:
-1. Objects must have keys  - Arrays have numeric keys automatically starting from 0
+1. Objects must have keys - Arrays have numeric keys automatically starting from 0
 2. Objects have { } - Arrays have []
-3. We can reach Objects' numbers by kea names - We can reach arrays' members by index numbers
+3. We can reach Objects' numbers by key names - We can reach arrays' members by index numbers
 */
 
 let myGroupArr = [
@@ -50,9 +52,10 @@ myArr[4] = 'hi' // creating a new array element in the 5th place
 // Array length is calculated at last element's index number +1
 console.log('the length of my array is: ' + myArr.length);
 
-myArr[100] = 'Porsche' // creating a new array element in the 10th place
+myArr[100] = 'Porsche' // creating a new array element in the 100th place
 
 console.log('the length of my array is: ' + myArr.length);
+console.log(myArr);
 
 /* 
 Push is a method which gets the last element's index and sets the next element with 1 more number and the value of parameter which you set.
@@ -61,7 +64,7 @@ myArr.push('Lamborghini'); // with .push you can send an element to the end of t
 
 myArr.unshift('Toyota'); //.unshift pushes all elements down and puts an element on top
 
-myArr.shift(); // removes the last element of the array
+myArr.shift(); // removes the first element of the array
 
 myArr.pop(); //removes the last one on the array
 myArr.pop(); //removes the last one on the array
@@ -118,31 +121,19 @@ let classArr = [
 
 console.log(classArr);
 
-//-----evening task
+let newArr = ['1', '2', '3', '4', '5'];
+console.log(newArr);
 
-let newClass = [];
+newArr.push('6');
+console.log('push', newArr);
+console.log('push', newArr.push('7')); //push returns the length of the array
 
-let studentsNo = prompt('How many students would you like to have?');
+newArr.pop();
+console.log('pop',newArr);
+console.log('pop',newArr.pop());
 
-for (let i = 1; i <= studentsNo; i++) {
-    let name = prompt(`Give me the first name for student no: ${i}`);
-    let lastName = prompt(`Give me the last name for ${name}`);
-    let age = prompt(`Give me the age for ${name} ${lastName}`);
+newArr.shift();
+console.log('shift',newArr);
 
-
-    let skills = [];
-    let skillNo = 0;
-    do {
-        skills[skillNo] = prompt('Please add a skill:');
-        skillNo++
-
-        addSkill = prompt('Would you like to add another skill?')
-    } while (addSkill == 'yes');
-    newClass[(i-1)]= {name, lastName, age, skills};
-   /*  newClass.push({name, lastName, age, skills}); */
-}
-
-console.log(newClass);
-
-
-
+newArr.unshift('mind');
+console.log('unshift',newArr);
